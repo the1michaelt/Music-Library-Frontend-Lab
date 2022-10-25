@@ -1,23 +1,52 @@
-import "./MusicTable.css"
-import React from "react";
-import Post from "../Post/Post";
+import React, { useState } from 'react';
+import './AddEntryForm.css';
 
-const PostList = (props) => {
+const AddEntryForm = (props) => {
+
+    const [idIndex, setIdIndex] = useState(0);
+    const [artist, setArtist] = useState('');
+    const [album, setAlbum] = useState('');
+    const [releaseDate, setReleaseDate] = useState('');
+    const [genre, setGenre] = useState('');
+  
+    function handleSubmit(event) {
+        event.preventDefault();
+        let newEntry = {
+            idIndex: idIndex,
+            artist: artist,
+            album: album,
+            releaseDate: releaseDate,
+            genre: genre,
+        }
+        console.log(newEntry);
+        props.addNewEntryProperty(newEntry)//executes the function on line 16 of Apps.js
+    }
+
     return (
-        <div>
-            {props.parentList.map((entry, index) => {
-                return (
-                    <React.Fragment>
-                        <p>{entry.index}</p>
-                        <p className='userName'>{entry.userName}</p>
-                        <p>{entry.userPost}</p>
-                        <span>
-                            <i className=" hover glyphicon glyphicon-thumbs-up"> </i>
-                            <i className=" hover glyphicon glyphicon-thumbs-down"> </i>
-                        </span>
-                        <hr />
-                    </React.Fragment>
-                )
-            })}
-        </div>
-    )
+        <form onSubmit={handleSubmit} className='form-grid'>
+            <div className='form-group'>
+                <label>ID (do not display)</label>
+                <input type='number' className='form-control' value={weight} onChange={(event) => setIdIndex(parseFloat(event.target.value))} />
+            </div>
+            <div className='form-group'>
+                <label>Artist</label>
+                <input type='text' className='form-control' value={artist} onChange={(event) => setArtist(event.target.value)} />
+            </div>
+            <div className='form-group'>
+                <label>Album</label>
+                <input type='text' className='form-control' value={album} onChange={(event) => setAlbum(event.target.value)} />
+            </div>
+            <div className='form-group'>
+                <label>Release Date</label>
+                <input type='date' className='form-control' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} />
+            </div>
+            <div className='form-group'>
+                <label>Genre</label>
+                <input type='text' className='form-control' value={genre} onChange={(event) => setGenre(event.target.value)} />
+            </div>
+            <button type='submit' className='btn btn-primary' style={{ 'margin-top': '1em' }}>Add</button>
+        </form>
+    );
+}
+
+export default AddEntryForm;
