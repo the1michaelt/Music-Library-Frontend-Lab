@@ -1,11 +1,14 @@
-import "./SearchBar.css"
+import React, { useState } from 'react';
 import './NavBar.css';
+import React from 'react';
+
 
 function NavBar() {
+
     return (
-        <div className='row'>
-            <h3 className='NavBar'>MusicBox</h3>
-            <SearchBar />
+        // a logo
+        <div className='row'>  
+            <h3 className='nav-bar'>MusicBox</h3>
         </div>
     );
 }

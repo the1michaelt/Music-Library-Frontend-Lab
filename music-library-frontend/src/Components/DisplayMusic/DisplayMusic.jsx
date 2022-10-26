@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import './App.css';
+import './DisplayMusic'
+import App from 'App';
 
 function DisplayMusic(props) {
 
@@ -8,7 +9,6 @@ function DisplayMusic(props) {
         try {
             let response = await axios.get('http://127.0.0.1:8000/api/music/')
             { console.log('songs in getSong Return:', props.songs) }
-            { props.songs.map((props.songs) => console.log('single song inside getSongs map:', props.songs)) }
             setSongs(response.data)
         }
         catch (err) {
@@ -17,10 +17,10 @@ function DisplayMusic(props) {
     }
     return (
         <div>
-            <p>Display Music</p>
+            <p>Display All Songs</p>
             <button onClick={getSongs}>Get Songs</button>
+            <PostMusic />
         </div>
-      )
+    )
 }
-
 export default DisplayMusic;

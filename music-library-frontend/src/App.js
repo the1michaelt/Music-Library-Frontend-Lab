@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
-// import MusicTable from './Components/MusicTable/MusicTable';
+import NavBar from './Components/NavBar/NavBar';
+import MusicTable from './Components/MusicTable/MusicTable';
+import AddSongForm from './Components/AddSongForm/AddSongForm';
 import axios from 'axios'
 import './App.css';
 
@@ -12,47 +13,14 @@ function App() {
     setSongs();
   }, [])
 
-  
-  //     // <div className='container-fluid'>
-  //     //   <div className='row'>
-  //     //     <NavBar />
-  //     //     <div className='col-md-6'>
-  //     //       <div className='border-box'>
-  //     //       <DisplayMusic /> 
- 
-  //     //       </div>
-  //     //       <div className='border-box'>
-  //     //         <MusicTable addNewSongEntryProperty={newSongEntry} />
- 
-  //     //       </div>
-  //     //     </div>
-  //     //   </div>
-  //     // </div>
-  //   );
-  // }
-
-  // export default App;
-
- 
-  async function createSong(newSong) {
-    try {
-      let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
-      if (response.status === 201) {
-        console.log('Success in songs Posted:', response);
-        await createSong(newSong);
-      }
-    }
-    catch {
-      console.log('Errors in Posted');
-    }
-  }
-    return (
-      <div>
-        <p>Post songs</p>
-        {console.log('Return songs Posted:', songs)}
+  return (
+       <div>
+        <NavBar />
+        <MusicTable /> 
+        <AddSongForm />
+        <BackgroundImage />
       </div>
     )
     
- 
-  }
+ }
 export default App;
