@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import App from 'App';
 import "./AddSongForm"
-//Add a singular song through a form
+//Search bar
 
 function AddSongForm(props) {
 
@@ -28,7 +27,7 @@ function AddSongForm(props) {
                 <form onSubmit={handleSubmit} className='form-grid'>
                     <div className='form-group'>
                         <label>ID</label>
-                        <input type='number' className='form-control' value={weight} onChange={(event) => setIdIndex(parseFloat(event.target.value))} />
+                        <input type='number' className='form-control' value={idIndex} onChange={(event) => setIdIndex(parseFloat(event.target.value))} />
                     </div>
                     <div className='form-group'>
                         <label>Artist</label>
@@ -48,14 +47,19 @@ function AddSongForm(props) {
                     </div>
                     <button type='submit' className='btn btn-primary' style={{ 'margin-top': '1em' }}>Add Song</button>
                 </form>
-            </div>
         // search button
-            <div className="search-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search" />
+            <div>
+                <div>
+                <form className="search-button">
+                    <input type="text" name="search" />
                     <button type="submit"></button>
                 </form>
-            </div>    
+            </div>
+            </div>
+  
+        </div>
+   
     )
+
 }
 export default AddSongForm;

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import BackgroundImage from './Components/BackgroundImage/BackgroundImage';
 import NavBar from './Components/NavBar/NavBar';
 import MusicTable from './Components/MusicTable/MusicTable';
-import AddSongForm from './Components/AddSongForm/AddSongForm';
-import axios from 'axios'
-import './App.css';
+
 
 function App() {
 
@@ -14,11 +13,10 @@ function App() {
   }, [])
 
   return (
-       <div>
-        <NavBar />
-        <MusicTable /> 
-        <AddSongForm />
-        <BackgroundImage />
+    <div>
+      <NavBar />
+      <MusicTable />
+      <BackgroundImage />
       </div>
     )
     
