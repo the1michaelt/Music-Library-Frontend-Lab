@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AddEntryForm.css';
 
-const AddEntryForm = (props) => {
+const MusicTable = (props) => {
 
     const [idIndex, setIdIndex] = useState(0);
     const [artist, setArtist] = useState('');
@@ -11,21 +11,21 @@ const AddEntryForm = (props) => {
   
     function handleSubmit(event) {
         event.preventDefault();
-        let newEntry = {
+        let newSongEntry = {
             idIndex: idIndex,
             artist: artist,
             album: album,
             releaseDate: releaseDate,
             genre: genre,
         }
-        console.log(newEntry);
-        props.addNewEntryProperty(newEntry)//executes the function on line 16 of Apps.js
+        console.log(newSongEntry);
+        props.addNewSongEntryProperty(newSongEntry)//executes the function on line 16 of Apps.js
     }
 
     return (
         <form onSubmit={handleSubmit} className='form-grid'>
             <div className='form-group'>
-                <label>ID (do not display)</label>
+                <label>ID</label>
                 <input type='number' className='form-control' value={weight} onChange={(event) => setIdIndex(parseFloat(event.target.value))} />
             </div>
             <div className='form-group'>
@@ -44,9 +44,9 @@ const AddEntryForm = (props) => {
                 <label>Genre</label>
                 <input type='text' className='form-control' value={genre} onChange={(event) => setGenre(event.target.value)} />
             </div>
-            <button type='submit' className='btn btn-primary' style={{ 'margin-top': '1em' }}>Add</button>
+            <button type='submit' className='btn btn-primary' style={{ 'margin-top': '1em' }}>Add Song</button>
         </form>
     );
 }
 
-export default AddEntryForm;
+export default MusicTable;
