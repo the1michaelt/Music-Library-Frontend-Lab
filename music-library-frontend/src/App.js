@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
 
-  const [entries, setEntries] = useState([])
+  const [songs, setSongs] = useState([])
 
   useEffect(() => {
     getSongs();
@@ -16,7 +16,7 @@ function App() {
     try {
       let response = await axios.get('http://127.0.0.1:8000/api/music/')
       console.log('response in getSongs', response)
-      setEntries(response.data)
+      setSongs(response.data)
     }
     catch (err) {
       console.log(err)
@@ -31,9 +31,9 @@ function App() {
   return (
     <div>
       <p>hello world</p>
-    {    console.log('songs in return:', entries)  }
+    {    console.log('songs in return:', songs)  }
     {
-    entries.map((entries) => console.log('single song inside map', entries))
+    songs.map((songs) => console.log('single song inside map', songs))
   } 
   </div>
     // <div className='container-fluid'>
