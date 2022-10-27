@@ -1,5 +1,5 @@
 .search-button {
-
+    border: .5rem solid #000;
 }
 
 .form-group{
@@ -12,8 +12,4 @@
 
 .btn {
     
-}
-
-.btn-primary {
-
 }
