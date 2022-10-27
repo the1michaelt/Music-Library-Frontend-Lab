@@ -6,12 +6,6 @@ import MusicTable from './Components/MusicTable/MusicTable';
 
 function App() {
 
-  const [songs, setSongs] = useState([])
-
-  useEffect(() => {
-    setSongs();
-  }, [])
-
   return (
     <div>
       <NavBar />

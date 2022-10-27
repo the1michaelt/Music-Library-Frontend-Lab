@@ -1,25 +1,24 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 
-//GET
+// //GET (Filter, MAPS by one song)
 
-async function SelectBySongs(props) {
-    try {
-        let response = await axios.get('http://127.0.0.1:8000/api/music/')
-        props.songs.map((song) => { };
-            console.log('single song inside getSongs map:', song);
-        ) 
-        setSongs(response.data)
-    }
-    catch (err) {
-        console.log('Error in filterSongs', err)
-    }
+// async function SelectBySongs(props) {
+//     try {
+//         let response = await axios.get('http://127.0.0.1:8000/api/music/')
+//         let songSelection = songs.map((song) => {
+//         setSongs(response.data)   
+//         console.log('Success in SelectBySongs (Get):', songSelection)
+//         })
+//     catch (songSelection) {
+//         console.log('Error in SelectBySongs (Get):', songSelection)
+//     }
 
-return (
-    <div>
-        <p>Filter Single</p>
-        <button onClick={getSongs}>Find a Song</button>
-    </div>
-)
-}
-export default SelectBySongs(props)
+// return (
+//     <div>
+//         <p>Filter a Single Song</p>
+//         <button onClick={SelectBySongs}>Select a Song</button>
+//     </div>
+// )
+// }
+// export default SelectBySongs(props)

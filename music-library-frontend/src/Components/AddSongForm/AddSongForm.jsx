@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./AddSongForm"
-//Search bar
+//Form to input Add song 
 
 function AddSongForm(props) {
 
@@ -45,7 +45,7 @@ function AddSongForm(props) {
                         <label>Genre</label>
                         <input type='text' className='form-control' value={genre} onChange={(event) => setGenre(event.target.value)} />
                     </div>
-                    <button type='submit' className='btn btn-primary' style={{ 'margin-top': '1em' }}>Add Song</button>
+                    <button type='submit' className='btn'>Add Song</button>
                 </form>
         // search button
             <div>
